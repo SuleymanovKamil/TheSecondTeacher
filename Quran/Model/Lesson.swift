@@ -7,15 +7,28 @@
 
 import SwiftUI
 
-struct Lesson: Identifiable {
-    let id = UUID()
+struct Lesson {
     let title: String
     let subtitle: String
     let view: AnyView
 }
 
-let lessonsArray: [Lesson] = [
-    Lesson(title: "Вступление", subtitle: "Почему нужно уметь читать Коран?", view: AnyView(ZeroLessonView())),
+struct LessonArray {
+    let title: String
+    let lessons: [Lesson]
+}
+
+let lessons = [
+    LessonArray(title: "", lessons: introduction),
+    LessonArray(title: "Арабский алфавит", lessons: alphabetLessons),
+    LessonArray(title: "Знаки не вошедшие в алфавит", lessons: otherSymbols),
+    LessonArray(title: "Правила Тажвида", lessons: tajweedLessons),
+    LessonArray(title: "", lessons: about),
+]
+
+let introduction = [Lesson(title: "Вступление", subtitle: "Почему нужно уметь читать Коран?", view: AnyView(ZeroLessonView()))]
+
+let alphabetLessons = [
     Lesson(title: "Урок 1", subtitle: "Огласовки. Алиф ﺍ", view: AnyView(FirstLessonView())),
     Lesson(title: "Урок 2", subtitle: "Сукун. Ра ﺭ, За ﺯ", view: AnyView(SecondLessonView())),
     Lesson(title: "Урок 3", subtitle: "Мим ﻡ. Практика", view: AnyView(ThirdLesson())),
@@ -28,16 +41,22 @@ let lessonsArray: [Lesson] = [
     Lesson(title: "Урок 10", subtitle: "Ха ﺥ, Ха ﺡ,  Гъайн ﻍ", view: AnyView(TenthLesson())),
     Lesson(title: "Урок 11", subtitle: "Гайн ﻉ, Даль ﺩ,  Дад ض", view: AnyView(EleventhLessonView())),
     Lesson(title: "Урок 12", subtitle: "Заль ذ, За ظ", view: AnyView(TwelfthLessonView())),
+]
+
+let otherSymbols = [
     Lesson(title: "Урок 1", subtitle: "Мадда - удлинение", view: AnyView(ThirteenthLessonView())),
     Lesson(title: "Урок 2", subtitle: "Ташдид - удвоенние", view: AnyView(FourteenLesssonView())),
     Lesson(title: "Урок 3", subtitle: "Окончания: Танвин, Та марбута.", view: AnyView(FifteenLessonView())),
     Lesson(title: "Урок 4", subtitle: "Хамза. Васлирование. Лям-алиф", view: AnyView(SixteenLessonView())),
+]
+
+let tajweedLessons: [Lesson] = [
     Lesson(title: "Урок 1", subtitle: "Солнечные и лунные согласные.", view: AnyView(tajweeddOneView())),
     Lesson(title: "Урок 2", subtitle: "Изхар. Идгам.", view: AnyView(tajweeddTwoView())),
     Lesson(title: "Урок 3", subtitle: "Икляб. Ихфа.", view: AnyView(tajweeddThreeView())),
     Lesson(title: "Урок 4", subtitle: "Три правила для Мима с сукуном", view: AnyView(tajweeddFourView())),
     Lesson(title: "Урок 5", subtitle: "Практика. Что дальше?", view: AnyView(tajweeddFiveView())),
-    Lesson(title: "О приложении", subtitle: "Заметили ошибку - напишите", view: AnyView(MailSender())),
 ]
 
+let about = [Lesson(title: "О приложении", subtitle: "Заметили ошибку - напишите", view: AnyView(MailSender()))]
 

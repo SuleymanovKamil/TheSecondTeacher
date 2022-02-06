@@ -123,6 +123,7 @@
 		6B721D4E2593F3DE009E443A /* AudioPalyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B721D4D2593F3DE009E443A /* AudioPalyer.swift */; };
 		6BFB30E027AE937300F9AD1E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB30DF27AE937300F9AD1E /* HomeViewModel.swift */; };
 		6BFB30E327AE954C00F9AD1E /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB30E227AE954C00F9AD1E /* Lesson.swift */; };
+		6BFB30E927AEBDDC00F9AD1E /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB30E827AEBDDC00F9AD1E /* LessonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +245,7 @@
 		6B721D4D2593F3DE009E443A /* AudioPalyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPalyer.swift; sourceTree = "<group>"; };
 		6BFB30DF27AE937300F9AD1E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6BFB30E227AE954C00F9AD1E /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		6BFB30E827AEBDDC00F9AD1E /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,6 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				6B721C4B2593F32C009E443A /* HomeView.swift */,
+				6BFB30E827AEBDDC00F9AD1E /* LessonView.swift */,
 				6B721C5B2593F37C009E443A /* Lessons */,
 				6BFB30E427AE95A900F9AD1E /* AudioPalyer */,
 				6BFB30E527AE95EE00F9AD1E /* MailSender */,
@@ -782,6 +785,7 @@
 				6B721D4E2593F3DE009E443A /* AudioPalyer.swift in Sources */,
 				6B721C782593F37C009E443A /* FifteenLessonView.swift in Sources */,
 				6B721C4A2593F32C009E443A /* QuranApp.swift in Sources */,
+				6BFB30E927AEBDDC00F9AD1E /* LessonView.swift in Sources */,
 				6B721D482593F3D4009E443A /* MailSender.swift in Sources */,
 				6B721D4B2593F3D9009E443A /* Extensions.swift in Sources */,
 				6BFB30E027AE937300F9AD1E /* HomeViewModel.swift in Sources */,

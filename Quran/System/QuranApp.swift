@@ -18,6 +18,7 @@ struct QuranApp: App {
                 .onChange(of: scenePhase) { _ in
                     if scenePhase == .active {
                         appLaunches += 1
+                        print("appLaunches = ", appLaunches)
                     }
                 }
         }
