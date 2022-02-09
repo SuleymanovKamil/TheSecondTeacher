@@ -10,8 +10,13 @@ import SwiftUI
 import StoreKit
 
 struct HomeView: View {
-    @StateObject private var VM = HomeViewModel()
+    @AppStorage("appLaunches") var appLaunches = 0
+    @AppStorage("isDark") var isDark = false
     @Environment(\.colorScheme) var colorScheme
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: CoreDataLesson.entity(), sortDescriptors: [])
+    private var savedLessons: FetchedResults<CoreDataLesson>
     
     var body: some View {
         NavigationView {
@@ -25,13 +30,14 @@ struct HomeView: View {
             .ignoresSafeArea(.all, edges: .bottom)
             .navigationBarTitle("معلم ثاني")
             .navigationBarItems(trailing:
-                Button(action: { VM.isDark.toggle() }, label: {
+                Button(action: { isDark.toggle() }, label: {
                 Image(systemName: colorScheme == .dark ? "sun.max" : "moon")
                     .font(.callout)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
             }))
             .onAppear {
-                if VM.appLaunches == 7 {
+                loadData()
+                if appLaunches == 7 {
                     Task {
                         try await Task.sleep(nanoseconds: 1_000_000_000)
                         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -42,8 +48,27 @@ struct HomeView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .preferredColorScheme(VM.isDark ? .dark : .light)
+        .preferredColorScheme( isDark ? .dark : .light)
         .accentColor(.primary)
+    }
+    
+    private func loadData() {
+        if savedLessons.isEmpty {
+            for i in 0..<lessons.count {
+                lessons[i].lessons.forEach { lesson in
+                    let coreDataLesson = CoreDataLesson(context: viewContext)
+                    coreDataLesson.id = Int64(lesson.id)
+                    coreDataLesson.isComplete = lesson.isComplete
+                    
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        let nsError = error as NSError
+                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    }
+                }
+            }
+        }
     }
 }
 
