@@ -13,7 +13,6 @@ struct HomeView: View {
     @AppStorage("appLaunches") var appLaunches = 0
     @AppStorage("isDark") var isDark = false
     @Environment(\.colorScheme) var colorScheme
-    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: CoreDataLesson.entity(), sortDescriptors: [])
     private var savedLessons: FetchedResults<CoreDataLesson>
@@ -30,7 +29,14 @@ struct HomeView: View {
             .ignoresSafeArea(.all, edges: .bottom)
             .navigationBarTitle("معلم ثاني")
             .navigationBarItems(trailing:
-                Button(action: { isDark.toggle() }, label: {
+                Button(action: {
+                if appLaunches == 0 {
+                    appLaunches = 1
+                    isDark.toggle()
+                }
+                
+                isDark.toggle()
+            }, label: {
                 Image(systemName: colorScheme == .dark ? "sun.max" : "moon")
                     .font(.callout)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
@@ -48,7 +54,7 @@ struct HomeView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .preferredColorScheme( isDark ? .dark : .light)
+        .preferredColorScheme(appLaunches == 0 ? colorScheme : (isDark ? .dark : .light))
         .accentColor(.primary)
     }
     

@@ -9,15 +9,26 @@ import SwiftUI
 
 struct LessonView: View {
     let lesson: Lesson
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: CoreDataLesson.entity(), sortDescriptors: [])
+    private var savedLessons: FetchedResults<CoreDataLesson>
+    @State private var isComplete = false
+    
     var body: some View {
         NavigationLink(destination: lesson.view
                         .navigationBarTitle(lesson.title))  {
             HStack {
                 VStack (alignment: .leading, spacing: 5){
                     
-                    Text(lesson.title)
-                        .font(.system(size: 20, weight: .regular, design: .default))
-                        .foregroundColor(.primary)
+                    HStack(spacing: 10) {
+                        Text(lesson.title)
+                            .font(.system(size: 20, weight: .regular, design: .default))
+                            .foregroundColor(.primary)
+                        
+                        Image(systemName: "checkmark.circle")
+                            .font(.subheadline)
+                            .opacity(isComplete ? 1 : 0)
+                    }
                     
                     Text(lesson.subtitle)
                         .font(.system(size: 16, weight: .regular, design: .default))
@@ -25,6 +36,13 @@ struct LessonView: View {
                 }
                 .padding(.top, 10)
                 Spacer()
+            }
+            .onAppear {
+                savedLessons.forEach { lesson in
+                    if self.lesson.id == lesson.id {
+                       isComplete = lesson.isComplete
+                    }
+                }
             }
         }
     }

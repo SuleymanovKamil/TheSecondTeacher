@@ -10,6 +10,14 @@
 		6B25FAAB27B3A87F006678BC /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAAA27B3A87F006678BC /* DoneButton.swift */; };
 		6B25FAAE27B3BD1C006678BC /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAAC27B3BD1C006678BC /* CoreData.xcdatamodeld */; };
 		6B25FAB027B3C0E9006678BC /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAAF27B3C0E9006678BC /* CoreDataService.swift */; };
+		6B25FAB327B46535006678BC /* SurrahIhlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAB227B46535006678BC /* SurrahIhlas.swift */; };
+		6B25FAB627B46A30006678BC /* AlIhlas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B25FAB527B46A30006678BC /* AlIhlas.mp3 */; };
+		6B25FAC127B475BE006678BC /* SurahAlFatiha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAC027B475BE006678BC /* SurahAlFatiha.swift */; };
+		6B25FAC327B475CA006678BC /* AlFatiha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B25FAC227B475CA006678BC /* AlFatiha.mp3 */; };
+		6B25FAC527B47859006678BC /* SurrahFalak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAC427B47859006678BC /* SurrahFalak.swift */; };
+		6B25FAC727B4787A006678BC /* SurrahNas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25FAC627B4787A006678BC /* SurrahNas.swift */; };
+		6B25FAC927B4792E006678BC /* Falak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B25FAC827B4792E006678BC /* Falak.mp3 */; };
+		6B25FACB27B47AF6006678BC /* AlNas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B25FACA27B47AF6006678BC /* AlNas.mp3 */; };
 		6B5EA3612593F6A5000306E5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B5EA3632593F6A5000306E5 /* Localizable.strings */; };
 		6B721C4A2593F32C009E443A /* QuranApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B721C492593F32C009E443A /* QuranApp.swift */; };
 		6B721C4C2593F32C009E443A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B721C4B2593F32C009E443A /* HomeView.swift */; };
@@ -133,6 +141,14 @@
 		6B25FAAA27B3A87F006678BC /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		6B25FAAD27B3BD1C006678BC /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		6B25FAAF27B3C0E9006678BC /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		6B25FAB227B46535006678BC /* SurrahIhlas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurrahIhlas.swift; sourceTree = "<group>"; };
+		6B25FAB527B46A30006678BC /* AlIhlas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlIhlas.mp3; sourceTree = "<group>"; };
+		6B25FAC027B475BE006678BC /* SurahAlFatiha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurahAlFatiha.swift; sourceTree = "<group>"; };
+		6B25FAC227B475CA006678BC /* AlFatiha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlFatiha.mp3; sourceTree = "<group>"; };
+		6B25FAC427B47859006678BC /* SurrahFalak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurrahFalak.swift; sourceTree = "<group>"; };
+		6B25FAC627B4787A006678BC /* SurrahNas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurrahNas.swift; sourceTree = "<group>"; };
+		6B25FAC827B4792E006678BC /* Falak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Falak.mp3; sourceTree = "<group>"; };
+		6B25FACA27B47AF6006678BC /* AlNas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlNas.mp3; sourceTree = "<group>"; };
 		6B5EA3622593F6A5000306E5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B721C462593F32C009E443A /* Quran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B721C492593F32C009E443A /* QuranApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranApp.swift; sourceTree = "<group>"; };
@@ -274,6 +290,92 @@
 			path = CoreDataService;
 			sourceTree = "<group>";
 		};
+		6B25FAB427B46A24006678BC /* Surah */ = {
+			isa = PBXGroup;
+			children = (
+				6B25FACA27B47AF6006678BC /* AlNas.mp3 */,
+				6B25FAC227B475CA006678BC /* AlFatiha.mp3 */,
+				6B25FAB527B46A30006678BC /* AlIhlas.mp3 */,
+				6B25FAC827B4792E006678BC /* Falak.mp3 */,
+			);
+			path = Surah;
+			sourceTree = "<group>";
+		};
+		6B25FAB727B47243006678BC /* Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				6B721C5D2593F37C009E443A /* FirstLessonView.swift */,
+				6B721C672593F37C009E443A /* SecondLessonView.swift */,
+				6B721C642593F37C009E443A /* ThirdLesson.swift */,
+				6B721C6F2593F37C009E443A /* FourthLesson.swift */,
+				6B721C702593F37C009E443A /* FifthLesson.swift */,
+				6B721C612593F37C009E443A /* SixthLesson.swift */,
+				6B721C652593F37C009E443A /* SeventhLesson.swift */,
+				6B721C5F2593F37C009E443A /* EighthLesson.swift */,
+				6B721C6B2593F37C009E443A /* NinthLessonView.swift */,
+				6B721C5C2593F37C009E443A /* TenthLesson.swift */,
+				6B721C6A2593F37C009E443A /* EleventhLessonView.swift */,
+				6B721C662593F37C009E443A /* TwelfthLessonView.swift */,
+			);
+			path = Alphabet;
+			sourceTree = "<group>";
+		};
+		6B25FAB827B47254006678BC /* Other symbols */ = {
+			isa = PBXGroup;
+			children = (
+				6B721C632593F37C009E443A /* ThirteenthLessonView.swift */,
+				6B721C5E2593F37C009E443A /* FourteenLesssonView.swift */,
+				6B721C622593F37C009E443A /* FifteenLessonView.swift */,
+				6B721C682593F37C009E443A /* SixteenLessonView.swift */,
+			);
+			path = "Other symbols";
+			sourceTree = "<group>";
+		};
+		6B25FAB927B4726F006678BC /* Tajweed */ = {
+			isa = PBXGroup;
+			children = (
+				6B721C602593F37C009E443A /* tajweeddOneView.swift */,
+				6B721C6C2593F37C009E443A /* tajweeddTwoView.swift */,
+				6B721C712593F37C009E443A /* tajweeddThreeView.swift */,
+				6B721C692593F37C009E443A /* tajweeddFourView.swift */,
+				6B721C6E2593F37C009E443A /* tajweeddFiveView.swift */,
+			);
+			path = Tajweed;
+			sourceTree = "<group>";
+		};
+		6B25FABA27B4727A006678BC /* Surah */ = {
+			isa = PBXGroup;
+			children = (
+				6B25FAC027B475BE006678BC /* SurahAlFatiha.swift */,
+				6B25FAB227B46535006678BC /* SurrahIhlas.swift */,
+				6B25FAC427B47859006678BC /* SurrahFalak.swift */,
+				6B25FAC627B4787A006678BC /* SurrahNas.swift */,
+			);
+			path = Surah;
+			sourceTree = "<group>";
+		};
+		6B25FABB27B472D9006678BC /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				6B721CB02593F38C009E443A /* 1 */,
+				6B721CD12593F38C009E443A /* 2 */,
+				6B721CC72593F38C009E443A /* 3 */,
+				6B721CC22593F38C009E443A /* 4 */,
+				6B721CE72593F38C009E443A /* 5 */,
+				6B721CA92593F38C009E443A /* 6 */,
+				6B721CA12593F38C009E443A /* 7 */,
+				6B721CBA2593F38C009E443A /* 8 */,
+				6B721C8E2593F38C009E443A /* 9 */,
+				6B721CB22593F38C009E443A /* 10 */,
+				6B721C972593F38C009E443A /* 11 */,
+				6B721CCA2593F38C009E443A /* 12 */,
+				6B721CE32593F38C009E443A /* 13 */,
+				6B721CEC2593F38C009E443A /* 14 */,
+				6B721C8B2593F38C009E443A /* 15-16 */,
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
 		6B721C3D2593F32C009E443A = {
 			isa = PBXGroup;
 			children = (
@@ -316,27 +418,10 @@
 			isa = PBXGroup;
 			children = (
 				6B721C6D2593F37C009E443A /* ZeroLessonView.swift */,
-				6B721C5D2593F37C009E443A /* FirstLessonView.swift */,
-				6B721C672593F37C009E443A /* SecondLessonView.swift */,
-				6B721C642593F37C009E443A /* ThirdLesson.swift */,
-				6B721C6F2593F37C009E443A /* FourthLesson.swift */,
-				6B721C702593F37C009E443A /* FifthLesson.swift */,
-				6B721C612593F37C009E443A /* SixthLesson.swift */,
-				6B721C652593F37C009E443A /* SeventhLesson.swift */,
-				6B721C5F2593F37C009E443A /* EighthLesson.swift */,
-				6B721C6B2593F37C009E443A /* NinthLessonView.swift */,
-				6B721C5C2593F37C009E443A /* TenthLesson.swift */,
-				6B721C6A2593F37C009E443A /* EleventhLessonView.swift */,
-				6B721C662593F37C009E443A /* TwelfthLessonView.swift */,
-				6B721C632593F37C009E443A /* ThirteenthLessonView.swift */,
-				6B721C5E2593F37C009E443A /* FourteenLesssonView.swift */,
-				6B721C622593F37C009E443A /* FifteenLessonView.swift */,
-				6B721C682593F37C009E443A /* SixteenLessonView.swift */,
-				6B721C602593F37C009E443A /* tajweeddOneView.swift */,
-				6B721C6C2593F37C009E443A /* tajweeddTwoView.swift */,
-				6B721C712593F37C009E443A /* tajweeddThreeView.swift */,
-				6B721C692593F37C009E443A /* tajweeddFourView.swift */,
-				6B721C6E2593F37C009E443A /* tajweeddFiveView.swift */,
+				6B25FAB727B47243006678BC /* Alphabet */,
+				6B25FAB827B47254006678BC /* Other symbols */,
+				6B25FAB927B4726F006678BC /* Tajweed */,
+				6B25FABA27B4727A006678BC /* Surah */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -344,21 +429,8 @@
 		6B721C8A2593F38C009E443A /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				6B721CB02593F38C009E443A /* 1 */,
-				6B721CD12593F38C009E443A /* 2 */,
-				6B721CC72593F38C009E443A /* 3 */,
-				6B721CC22593F38C009E443A /* 4 */,
-				6B721CE72593F38C009E443A /* 5 */,
-				6B721CA92593F38C009E443A /* 6 */,
-				6B721CA12593F38C009E443A /* 7 */,
-				6B721CBA2593F38C009E443A /* 8 */,
-				6B721C8E2593F38C009E443A /* 9 */,
-				6B721CB22593F38C009E443A /* 10 */,
-				6B721C972593F38C009E443A /* 11 */,
-				6B721CCA2593F38C009E443A /* 12 */,
-				6B721CE32593F38C009E443A /* 13 */,
-				6B721CEC2593F38C009E443A /* 14 */,
-				6B721C8B2593F38C009E443A /* 15-16 */,
+				6B25FAB427B46A24006678BC /* Surah */,
+				6B25FABB27B472D9006678BC /* Lessons */,
 				6B721CD62593F38C009E443A /* Tajweed */,
 			);
 			path = Sounds;
@@ -694,6 +766,7 @@
 				6B721D0B2593F38C009E443A /* la01.mp3 in Resources */,
 				6B721D412593F38C009E443A /* rabba.mp3 in Resources */,
 				6B721D1E2593F38C009E443A /* ta01.mp3 in Resources */,
+				6B25FAC327B475CA006678BC /* AlFatiha.mp3 in Resources */,
 				6B721CF72593F38C009E443A /* to01.mp3 in Resources */,
 				6B721D0F2593F38C009E443A /* aiu.mp3 in Resources */,
 				6B721CF62593F38C009E443A /* to02.mp3 in Resources */,
@@ -714,6 +787,7 @@
 				6B721CFD2593F38C009E443A /* dodidu.mp3 in Resources */,
 				6B721D262593F38C009E443A /* z02.mp3 in Resources */,
 				6B721D232593F38C009E443A /* ma01.mp3 in Resources */,
+				6B25FACB27B47AF6006678BC /* AlNas.mp3 in Resources */,
 				6B721CF52593F38C009E443A /* so01.mp3 in Resources */,
 				6B721CF42593F38C009E443A /* so02.mp3 in Resources */,
 				6B721D2B2593F38C009E443A /* za.mp3 in Resources */,
@@ -746,6 +820,7 @@
 				6B721CFB2593F38C009E443A /* da01.mp3 in Resources */,
 				6B721D3C2593F38C009E443A /* AlifLamMim.mp3 in Resources */,
 				6B721D212593F38C009E443A /* na1.mp3 in Resources */,
+				6B25FAC927B4792E006678BC /* Falak.mp3 in Resources */,
 				6B721D302593F38C009E443A /* 2.mp3 in Resources */,
 				6B721D2D2593F38C009E443A /* rariru.mp3 in Resources */,
 				6B721D182593F38C009E443A /* sasisu.mp3 in Resources */,
@@ -770,6 +845,7 @@
 				6B721D202593F38C009E443A /* naninu.mp3 in Resources */,
 				6B721D1B2593F38C009E443A /* thathithu.mp3 in Resources */,
 				6B721CF22593F38C009E443A /* totitu.mp3 in Resources */,
+				6B25FAB627B46A30006678BC /* AlIhlas.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +862,7 @@
 				6B721C4C2593F32C009E443A /* HomeView.swift in Sources */,
 				6B721C7D2593F37C009E443A /* SecondLessonView.swift in Sources */,
 				6B721C872593F37C009E443A /* tajweeddThreeView.swift in Sources */,
+				6B25FAB327B46535006678BC /* SurrahIhlas.swift in Sources */,
 				6BFB30E327AE954C00F9AD1E /* Lesson.swift in Sources */,
 				6B721C7C2593F37C009E443A /* TwelfthLessonView.swift in Sources */,
 				6B721C832593F37C009E443A /* ZeroLessonView.swift in Sources */,
@@ -799,9 +876,11 @@
 				6B25FAAE27B3BD1C006678BC /* CoreData.xcdatamodeld in Sources */,
 				6B25FAAB27B3A87F006678BC /* DoneButton.swift in Sources */,
 				6B721C862593F37C009E443A /* FifthLesson.swift in Sources */,
+				6B25FAC127B475BE006678BC /* SurahAlFatiha.swift in Sources */,
 				6B25FAB027B3C0E9006678BC /* CoreDataService.swift in Sources */,
 				6B721C792593F37C009E443A /* ThirteenthLessonView.swift in Sources */,
 				6B721C852593F37C009E443A /* FourthLesson.swift in Sources */,
+				6B25FAC527B47859006678BC /* SurrahFalak.swift in Sources */,
 				6B721D4E2593F3DE009E443A /* AudioPalyer.swift in Sources */,
 				6B721C782593F37C009E443A /* FifteenLessonView.swift in Sources */,
 				6B721C4A2593F32C009E443A /* QuranApp.swift in Sources */,
@@ -810,6 +889,7 @@
 				6B721D4B2593F3D9009E443A /* Extensions.swift in Sources */,
 				6BFB30E027AE937300F9AD1E /* HomeViewModel.swift in Sources */,
 				6B721C812593F37C009E443A /* NinthLessonView.swift in Sources */,
+				6B25FAC727B4787A006678BC /* SurrahNas.swift in Sources */,
 				6B721C742593F37C009E443A /* FourteenLesssonView.swift in Sources */,
 				6B721C732593F37C009E443A /* FirstLessonView.swift in Sources */,
 				6B721C7A2593F37C009E443A /* ThirdLesson.swift in Sources */,
@@ -967,7 +1047,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7.2;
 				PRODUCT_BUNDLE_IDENTIFIER = QuranSelfTraining.SecondTeacher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -993,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7.2;
 				PRODUCT_BUNDLE_IDENTIFIER = QuranSelfTraining.SecondTeacher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

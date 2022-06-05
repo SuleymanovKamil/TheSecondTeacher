@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct ZeroLessonView: View {
-    var id: Int
+    let id: Int
     var body: some View {
-        ScrollView (showsIndicators: false) {
-            VStack (alignment: .leading, spacing: 10) {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 10) {
                 
                 Text("""
                                                             С именем Аллаха Милостливого, Милосердного. Благословение Аллаха пророку Мухаммаду, его семье и сподвижкникам. Ассаламу аляйкум.
@@ -45,6 +45,7 @@ struct ZeroLessonView: View {
                     .foregroundColor(.secondary)
                 
                 DoneButton(id: id)
+                    .padding(.top)
             }
             .padding(.bottom, 50)
         }

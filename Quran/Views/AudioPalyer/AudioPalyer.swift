@@ -30,7 +30,8 @@ struct AudioPlayer: View {
         }
         .onAppear{
             play()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.00000001) {
+            Task {
+                try await Task.sleep(nanoseconds: 0_000_000_100)
                 player.pause()
                 hide = false
             }
@@ -55,7 +56,7 @@ struct AudioPlayer: View {
                 print(error)
             }
         }
-        if  showHUD {
+        if showHUD {
             hide = true
         }
         player.play()
@@ -70,7 +71,7 @@ struct AudioPlayer: View {
                 hide.toggle()
                 
             }, label: {
-                Image(systemName: "pause")
+                Image(systemName: "pause.circle")
                     .font(.title)
                     .foregroundColor(.primary)
             })
@@ -79,7 +80,7 @@ struct AudioPlayer: View {
             Button(action: {
                 play()
             }, label: {
-                Image(systemName: "play")
+                Image(systemName: "play.circle")
                     .font(.title)
                     .foregroundColor(.primary)
             })
@@ -113,7 +114,6 @@ struct AudioPlayerControlsView: View {
                        onEditingChanged: sliderEditingChanged,
                        minimumValueLabel: Text("\(Utility.formatSecondsToHMS(currentTime))"),
                        maximumValueLabel: Text("\(Utility.formatSecondsToHMS(currentDuration))")) {
-                    
                 }
              
             }

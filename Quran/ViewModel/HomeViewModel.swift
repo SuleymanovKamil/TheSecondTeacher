@@ -10,4 +10,5 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @AppStorage("appLaunches") var appLaunches = 0
     @AppStorage("isDark") var isDark = false
+    
 }

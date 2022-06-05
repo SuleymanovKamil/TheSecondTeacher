@@ -14,41 +14,52 @@ import MessageUI
 struct MailSender: View {
     @State private var showSheet = false
     @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State private var message = ""
     
     var body: some View {
-            VStack {
-                Text("Приложение создано ради Аллаха - любое распространение, копирование и т.п. не только не возбраняется, но и всячески приветствуется.")
-                 .fixedSize(horizontal: false, vertical: true)
-                    .padding(.bottom, 20)
-                    .padding(.horizontal)
-                .padding(.top, 20)
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                                self.suggestFeature()
-                            }) {
-                                Text("Написать о неточности или предложении")
-                                    .foregroundColor(Color.white)
-                                  
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(16)
-                                    .frame(width: UIScreen.main.bounds.width - 20)
-                            }
-                    .sheet(isPresented: $showSheet) {
-                        MailView(result: self.$result, newSubject: "Второй учитель", newMsgBody: "Напишите здесь ваше предложение или ошибку в приложении")
-                    }
-                    .padding(.bottom, 20)
-                    Spacer()
+        VStack {
+            Text("Приложение создано ради Аллаха - любое распространение, копирование и т.п. не только не возбраняется, но и всячески приветствуется.")
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal)
+            
+                ZStack(alignment: .top) {
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke()
+                    
+                    TextEditor(text: $message)
+                        .textFieldStyle(.roundedBorder)
+                        .overlay( Text(message.isEmpty ? "Написать о неточности или предложении" : "")
+                                    .foregroundColor(.secondary), alignment: .top)
+                        .padding(10)
+                    
+                   
                 }
-                Text("Камиль Сулейманов. 2021")
-                    .font(.system(size: 10))
-                .padding(.bottom, 20)
+                .padding()
                 
+            HStack {
+                Spacer()
+                Button(action: {  suggestFeature() }) {
+                    Text("Отправить")
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .frame(width: screen.width - 20)
+                        .background(message.isEmpty || message == "Написать о неточности или предложении" ? Color.secondary : Color.blue)
+                        .cornerRadius(16)
+                }
+                
+                .sheet(isPresented: $showSheet) {
+                    MailView(result: self.$result, newSubject: "Второй учитель", newMsgBody: message)
+                }
+                .padding(.bottom, 10)
                 Spacer()
             }
-            .padding(.top, -60)
+            .disabled(message.isEmpty || message == "Написать о неточности или предложении")
+            
+            Text("Камиль Сулейманов. 2022")
+                .font(.system(size: 10))
+            
+            Spacer()
+        }
     }
     func suggestFeature() {
         if MFMailComposeViewController.canSendMail() {
@@ -64,24 +75,24 @@ struct mailSender_Previews: PreviewProvider {
 }
 
 struct MailView: UIViewControllerRepresentable {
-
+    
     @Environment(\.presentationMode) var presentation
     @Binding var result: Result<MFMailComposeResult, Error>?
     
     let newSubject : String
     let newMsgBody : String
-
+    
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
-
+        
         @Binding var presentation: PresentationMode
         @Binding var result: Result<MFMailComposeResult, Error>?
-
+        
         init(presentation: Binding<PresentationMode>,
              result: Binding<Result<MFMailComposeResult, Error>?>) {
             _presentation = presentation
             _result = result
         }
-
+        
         func mailComposeController(_ controller: MFMailComposeViewController,
                                    didFinishWith result: MFMailComposeResult,
                                    error: Error?) {
@@ -95,12 +106,12 @@ struct MailView: UIViewControllerRepresentable {
             self.result = .success(result)
         }
     }
-
+    
     func makeCoordinator() -> Coordinator {
         return Coordinator(presentation: presentation,
                            result: $result)
     }
-
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = context.coordinator
@@ -109,9 +120,9 @@ struct MailView: UIViewControllerRepresentable {
         vc.setMessageBody(newMsgBody, isHTML: false)
         return vc
     }
-
+    
     func updateUIViewController(_ uiViewController: MFMailComposeViewController,
                                 context: UIViewControllerRepresentableContext<MailView>) {
-
+        
     }
 }

@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct DoneButton: View {
+    @State var lesson = Lesson(id: 0, title: "Вступление", subtitle: "Почему нужно уметь читать Коран?", view: AnyView(ZeroLessonView(id: 0)))
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: CoreDataLesson.entity(), sortDescriptors: [])
     private var savedLessons: FetchedResults<CoreDataLesson>
-    
-    @State var lesson = Lesson(id: 0, title: "Вступление", subtitle: "Почему нужно уметь читать Коран?", view: AnyView(ZeroLessonView(id: 0)))
     let id: Int
     var body: some View {
         HStack {
-            Text("Урок освоен")
+            Text("Урок освоен?")
                 .font(.title3)
-            Rectangle()
+           Circle()
                 .stroke()
                 .frame(width: 25, height: 25)
                 .overlay(
                     Image(systemName: "checkmark")
-                        .font(.title2)
+                        .font(.callout)
                         .opacity(lesson.isComplete ? 1 : 0)
                 )
         }
@@ -39,9 +38,7 @@ struct DoneButton: View {
             }
         }
         .onAppear {
-            print(savedLessons.count)
             savedLessons.forEach { lesson in
-                print(lesson.id, lesson.isComplete)
                 if lesson.id == id {
                     self.lesson.isComplete = lesson.isComplete
                 }
