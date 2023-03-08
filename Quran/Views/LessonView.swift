@@ -19,23 +19,20 @@ struct LessonView: View {
                         .navigationBarTitle(lesson.title))  {
             HStack {
                 VStack (alignment: .leading, spacing: 5){
-                    
-                    HStack(spacing: 10) {
                         Text(lesson.title)
                             .font(.system(size: 20, weight: .regular, design: .default))
                             .foregroundColor(.primary)
-                        
-                        Image(systemName: "checkmark.circle")
-                            .font(.subheadline)
-                            .opacity(isComplete ? 1 : 0)
-                    }
-                    
+
                     Text(lesson.subtitle)
                         .font(.system(size: 16, weight: .regular, design: .default))
                         .foregroundColor(.secondary)
                 }
                 .padding(.top, 10)
                 Spacer()
+
+                Image(systemName: "checkmark.circle")
+                    .font(.title3)
+                    .opacity(isComplete ? 1 : 0)
             }
             .onAppear {
                 savedLessons.forEach { lesson in
