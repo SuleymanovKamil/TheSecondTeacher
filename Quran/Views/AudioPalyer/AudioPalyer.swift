@@ -113,9 +113,9 @@ struct AudioPlayerControlsView: View {
                        in: 0...currentDuration,
                        onEditingChanged: sliderEditingChanged,
                        minimumValueLabel: Text("\(Utility.formatSecondsToHMS(currentTime))"),
-                       maximumValueLabel: Text("\(Utility.formatSecondsToHMS(currentDuration))")) {
-                }
-             
+                       maximumValueLabel: Text("\(Utility.formatSecondsToHMS(currentDuration))")) {}
+                       .accentColor(.primary)
+
             }
         }
         .padding()
